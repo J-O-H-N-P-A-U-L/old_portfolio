@@ -14,7 +14,7 @@ export default class Portfolio extends React.Component {
       <Page heading='Portfolio'>
         <Grid>
           {this.props.viewer.works.edges.map(edge => {
-            const imageUrl = require('../../assets/jb-search.gif');
+            const imageUrl = require(`../../assets/${edge.node.name.toLowerCase()}.gif`);
             return (
               <Cell col={4} key={edge.node.id}>
                 <Card className={styles.card}>

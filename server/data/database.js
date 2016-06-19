@@ -38,14 +38,14 @@ const features = [
 ];
 
 const works = [
-  new Work('1', 'JB Hi-Fi', 'The JB Hi-FI Retail Site.', 'https://facebook.github.io/react'),
-  new Work('2', 'JB HiFi Solutions', 'JB Hi-Fi commercial deivision .', 'https://facebook.github.io/relay'),
-  new Work('3', 'Colorado', 'The Colorado web store.', 'http://graphql.org'),
-  new Work('4', 'Jag', 'The Jag Retail website.', 'http://expressjs.com'),
-  new Work('5', 'Williams', 'The Williams Retail website.', 'https://webpack.github.io'),
-  new Work('6', 'Mathers', 'Mathers Retail web store.', 'https://babeljs.io'),
-  new Work('7', 'Diana Ferrari', 'Diana Ferrari e-Boutique.', 'http://postcss.org'),
-  new Work('8', 'Betstar', 'Betstar propietary online wagering application.', 'http://www.getmdl.io')
+  new Work('1', 'JB Hi-Fi', 'The JB Hi-FI Retail Site.', 'http://www.jbhifi.com.au'),
+  new Work('2', 'JB HiFi Solutions', 'JB Hi-Fi commercial deivision .', 'http://www.jbhifi.com.au/solutions'),
+  new Work('3', 'Colorado', 'The Colorado web store.', 'http://www.colorado.com.au'),
+  new Work('4', 'Jag', 'The Jag Retail website.', 'http://www.jag.com.au'),
+  new Work('5', 'Williams', 'The Williams Retail website.', 'https://www.williamsshoes.com.au'),
+  new Work('6', 'Mathers', 'Mathers Retail web store.', 'https://www.mathers.com.au'),
+  new Work('7', 'Diana Ferrari', 'Diana Ferrari e-Boutique.', 'http://www.dianaferrari.com.au'),
+  new Work('8', 'Betstar', 'Betstar propietary online wagering application.', 'http://www.betstar.com.au')
 ];
 
 
@@ -68,8 +68,6 @@ function getWork(id) {
 function getWorks() {
   return works;
 }
-
-
 
 export {
   User,
