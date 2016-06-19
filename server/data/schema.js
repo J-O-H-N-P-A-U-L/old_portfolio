@@ -26,7 +26,9 @@ import {
   Feature,
   getUser,
   getFeature,
-  getFeatures
+  getFeatures,
+  getWork,
+  getWorks
 } from './database';
 
 
@@ -71,6 +73,12 @@ const userType = new GraphQLObjectType({
       args: connectionArgs,
       resolve: (_, args) => connectionFromArray(getFeatures(), args)
     },
+    works: {
+      type: workConnection,
+      description: 'Works that I have',
+      args: connectionArgs,
+      resolve: (_, args) => connectionFromArray(getWorks(), args)
+    },
     username: {
       type: GraphQLString,
       description: 'Users\'s username'
@@ -104,11 +112,32 @@ const featureType = new GraphQLObjectType({
   interfaces: [nodeInterface]
 });
 
+const workType = new GraphQLObjectType({
+  name: 'Work',
+  description: 'Work integrated in our starter kit',
+  fields: () => ({
+    id: globalIdField('Work'),
+    name: {
+      type: GraphQLString,
+      description: 'Name of the work'
+    },
+    description: {
+      type: GraphQLString,
+      description: 'Description of the work'
+    },
+    url: {
+      type: GraphQLString,
+      description: 'Url of the work'
+    }
+  }),
+  interfaces: [nodeInterface]
+});
+
 /**
  * Define your own connection types here
  */
 const { connectionType: featureConnection } = connectionDefinitions({ name: 'Feature', nodeType: featureType });
-
+const { connectionType: workConnection } = connectionDefinitions({ name: 'Work', nodeType: workType });
 /**
  * This is the type that will be the root of our query,
  * and the entry point into our schema.

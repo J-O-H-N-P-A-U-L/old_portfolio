@@ -38,6 +38,24 @@ type Query {
 type User implements Node {
   id: ID!
   features(after: String, first: Int, before: String, last: Int): FeatureConnection
+  works(after: String, first: Int, before: String, last: Int): WorkConnection
   username: String
   website: String
+}
+
+type Work implements Node {
+  id: ID!
+  name: String
+  description: String
+  url: String
+}
+
+type WorkConnection {
+  pageInfo: PageInfo!
+  edges: [WorkEdge]
+}
+
+type WorkEdge {
+  node: Work
+  cursor: String!
 }

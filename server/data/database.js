@@ -16,7 +16,16 @@ class Feature {
   }
 }
 
-const lvarayut = new User('1', 'Varayut Lerdkanlayanawat', 'lvarayut', 'https://github.com/lvarayut/relay-fullstack');
+class Work {
+  constructor(id, name, description, url) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.url = url;
+  }
+}
+
+const jp = new User('1', 'John Paul Hunter', 'jp', 'https://github.com/jp/relay-fullstack');
 const features = [
   new Feature('1', 'React', 'A JavaScript library for building user interfaces.', 'https://facebook.github.io/react'),
   new Feature('2', 'Relay', 'A JavaScript framework for building data-driven react applications.', 'https://facebook.github.io/relay'),
@@ -28,9 +37,20 @@ const features = [
   new Feature('8', 'MDL', 'Material Design Lite lets you add a Material Design to your websites.', 'http://www.getmdl.io')
 ];
 
+const works = [
+  new Work('1', 'JB Hi-Fi', 'The JB Hi-FI Retail Site.', 'https://facebook.github.io/react'),
+  new Work('2', 'JB HiFi Solutions', 'JB Hi-Fi commercial deivision .', 'https://facebook.github.io/relay'),
+  new Work('3', 'Colorado', 'The Colorado web store.', 'http://graphql.org'),
+  new Work('4', 'Jag', 'The Jag Retail website.', 'http://expressjs.com'),
+  new Work('5', 'Williams', 'The Williams Retail website.', 'https://webpack.github.io'),
+  new Work('6', 'Mathers', 'Mathers Retail web store.', 'https://babeljs.io'),
+  new Work('7', 'Diana Ferrari', 'Diana Ferrari e-Boutique.', 'http://postcss.org'),
+  new Work('8', 'Betstar', 'Betstar propietary online wagering application.', 'http://www.getmdl.io')
+];
+
 
 function getUser(id) {
-  return id === lvarayut.id ? lvarayut : null;
+  return id === jp.id ? jp : null;
 }
 
 function getFeature(id) {
@@ -41,10 +61,23 @@ function getFeatures() {
   return features;
 }
 
+function getWork(id) {
+  return works.find(w => w.id === id);
+}
+
+function getWorks() {
+  return works;
+}
+
+
+
 export {
   User,
   Feature,
+  Work,
   getUser,
   getFeature,
-  getFeatures
+  getFeatures,
+  getWork,
+  getWorks
 };
